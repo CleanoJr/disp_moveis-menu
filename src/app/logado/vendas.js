@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Alert, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import api from '../../api/axiosConfig'
 import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -15,9 +15,13 @@ const produtosExemplo = [
 export default function Vendas() {
   const {  refreshKey } = useLocalSearchParams();
 
- const [vendas, setVendas] = useState([
-  
- ]);
+  const [vendas, setVendas] = useState([
+    
+  ]);
+
+  const [products, setProducts] = useState([
+   
+  ]);
 
  const [refresh, setRefresh] = useState(false)
  const [carrinho, setCarrinho] = useState([]);
@@ -91,7 +95,7 @@ export default function Vendas() {
       <Text style={styles.titulo}>Área de Vendas</Text>
       <StatusBar style="auto" />
       <ScrollView  style={styles.scroll}>
-        {produtcts.map((produto, index) =>(
+        {products.map((produto, index) =>(
           <TouchableOpacity key={produto.id} style={styles.itens}
           onPress={() => handleItemPress(produto.id)}
           onLongPress={() => handleLongPress(produto.id)}
