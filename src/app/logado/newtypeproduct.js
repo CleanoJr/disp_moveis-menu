@@ -13,14 +13,13 @@ export default function NewTypeProduct() {
   const saveData = async ()=>{
 
     const body = {
-      id: id,
       descricao: descricao
     }
     console.log(body);
 
     api.post("/tipoproduto",body).then( (response)=>{
     // console.log(response);
-     router.replace("/logado/tipoproduto")
+     router.replace("/logado/typeproduct");
     }).catch((error)=>{
       console.log(error);
     });

@@ -17,8 +17,8 @@ export default function TypeProducts() {
 
     const dados = api.get("/tipoproduto").then(
       (resp)=>{
-        setTypeProducts(resp.data.tipoproduto)
-        console.log(resp.data.tipoproduto)
+        setTypeProducts(resp.data.tipos)
+        console.log(resp.data.tipos)
         setRefresh(false)
       }
     ).catch ((error)=>{

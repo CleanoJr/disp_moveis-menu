@@ -42,6 +42,28 @@ export default function Layout() {
           }}
         />
          <Drawer.Screen
+          name="typeproduct" // This is the name of the page and must match the url from root
+          options={{
+            drawerLabel: 'Tipo de Produtos',
+            title: 'Tipo de Produtos',
+            drawerIcon: ({ color }) => (
+              <FontAwesome name="android" size={24} color={color} />
+            ),
+            headerRight: () => (
+      <TouchableOpacity
+        onPress={() =>  {
+          router.replace( "/logado/newproduct" )}} // Volta para a tela anterior
+        style={{ marginLeft: 15 }}
+      >
+        <Ionicons name="add" size={24} color="black" />
+      </TouchableOpacity>
+    ),
+        
+          }}
+        />
+        
+
+         <Drawer.Screen
           name="newproduct" // This is the name of the page and must match the url from root
           initialParams={{refreshKey: Date.now()}} // Passando o refreshKey inicial
           options={{
@@ -53,6 +75,20 @@ export default function Layout() {
             ),
           }}
         />
+
+<Drawer.Screen
+          name="newtypeproduct" // This is the name of the page and must match the url from root
+          initialParams={{refreshKey: Date.now()}} // Passando o refreshKey inicial
+          options={{
+            drawerLabel: 'Novo Produtos',
+            title: 'Novo Produtos',
+            drawerItemStyle: { display: 'none' },
+            drawerIcon: ({ color }) => (
+              <FontAwesome name="address-book" size={24} color={color} />
+            ),
+          }}
+        />
+        
          <Drawer.Screen
           name="editproduct" // This is the name of the page and must match the url from root
           options={{
