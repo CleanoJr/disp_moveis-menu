@@ -73,6 +73,26 @@ export default function Layout() {
     ),
           }}
         />
+         <Drawer.Screen
+  name="vendas"
+  options={{
+    drawerLabel: 'Vendas',
+    title: 'Área de Vendas',
+    drawerIcon: ({ color }) => (
+      <FontAwesome name="shopping-cart" size={24} color={color} />
+    ),
+    headerRight: () => (
+      <TouchableOpacity
+        onPress={() => {
+          router.replace("/logado/vendas")
+        }}
+        style={{ marginLeft: 15 }}
+      >
+        <Ionicons name="add" size={24} color="black" />
+      </TouchableOpacity>
+    ),
+  }}
+/>
 
       </Drawer>
       
